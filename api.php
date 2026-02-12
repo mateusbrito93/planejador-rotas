@@ -3,7 +3,7 @@
 header('Content-Type: application/json');
 
 // --- SUA CHAVE FICA SEGURA AQUI (LADO DO SERVIDOR) ---
-$TOMTOM_KEY = 'SUA API TOMTOM'; 
+$TOMTOM_KEY = 'SUA API TOMTOM AQUI'; // Substitua pela sua chave real
 
 // Recebe qual ação o frontend quer (busca, rota ou chave publica)
 $action = $_GET['action'] ?? '';

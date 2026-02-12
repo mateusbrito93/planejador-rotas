@@ -146,7 +146,7 @@ function processRoutes(data) {
     }
 
     // Desenha a rápida no mapa
-    drawRouteOnMap(rapida.pontos, '#00e676', start, end);
+    drawRouteOnMap(rapida.pontos, '#00e676');
 }
 
 function createCard(rota, type, label, container) {
