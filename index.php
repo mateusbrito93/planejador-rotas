@@ -10,7 +10,7 @@
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps-web.min.js"></script>
 
     <style>
-        /* --- DESIGN DARK THEME --- */
+        /* --- DESIGN DARK THEME (BASE) --- */
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
@@ -31,6 +31,8 @@
             display: flex;
             flex-direction: column;
             border-right: 1px solid #333;
+            /* Transição suave para redimensionamento */
+            transition: all 0.3s ease;
         }
 
         #map {
@@ -124,14 +126,13 @@
         /* Cards de Resultado */
         .card {
             background: #252525;
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
-            margin-top: 20px;
+            margin-top: 15px;
             cursor: pointer;
             border: 1px solid #333;
             transition: transform 0.2s;
             display: none;
-            /* Escondido por padrão */
         }
 
         .card:hover {
@@ -153,11 +154,11 @@
 
         .badge {
             display: inline-block;
-            padding: 5px 10px;
+            padding: 4px 8px;
             border-radius: 20px;
             font-size: 0.7em;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
 
@@ -179,7 +180,7 @@
         .stats {
             display: flex;
             justify-content: space-between;
-            font-size: 1.4em;
+            font-size: 1.2em;
             font-weight: 700;
             color: #fff;
         }
@@ -210,6 +211,60 @@
             text-align: center;
             color: #aaa;
             margin-top: 10px;
+        }
+
+        /* --- RESPONSIVIDADE (MOBILE) --- */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                /* Muda de lado-a-lado para coluna */
+            }
+
+            #sidebar {
+                width: 100%;
+                /* Ocupa a largura total */
+                height: 45vh;
+                /* Ocupa 45% da altura da tela */
+                padding: 15px;
+                /* Reduz padding para ganhar espaço */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+                border-right: none;
+                border-bottom: 1px solid #333;
+                order: 1;
+                /* Garante que fique no topo (ou mude para 2 se quiser embaixo) */
+            }
+
+            #map {
+                width: 100%;
+                height: 55vh;
+                /* O mapa pega o resto da tela */
+                order: 2;
+            }
+
+            /* Ajustes finos para telas pequenas */
+            h2 {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+
+            input[type="text"] {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            button.btn-calc {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .card {
+                padding: 10px;
+                margin-top: 10px;
+            }
+
+            .stats {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
